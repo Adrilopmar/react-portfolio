@@ -1,9 +1,12 @@
 import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/NavbarMenu";
+import { Home } from "./views/Home";
 
 function App() {
   return (
     <>
-      <h1 className="text-6xl font-bold underline">Hello world!</h1>
+      <Navbar/>
+      <Home/>
       <Routes>
         {/* <Route></Route> */}
         </Routes>
