@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-export default function NavbarMenu() {
+
+export default function NavbarMenu({scroll}) {
   return (
     <>
       <ul className="flex w-full nav-bar">
@@ -14,20 +15,20 @@ export default function NavbarMenu() {
           </li>
         </div>
         <div className="flex w-2/4 justify-around mx-auto">
-          <li className="mr-6">
+          {/* <li className="mr-6">
             <Link className="text-black hover:text-white desktop-link">
               Home
             </Link>
-          </li>
+          </li> */}
           <li className="mr-6">
-            <Link className="text-black hover:text-white desktop-link">
+            <button onClick={()=> scroll('projects')} className="text-black hover:text-white desktop-link">
               Projects
-            </Link>
+            </button>
           </li>
           <li className="mr-6">
-            <Link className="text-black hover:text-white desktop-link">
+            <button onClick={()=> scroll('about')} className="text-black hover:text-white desktop-link">
               About
-            </Link>
+            </button>
           </li>
         </div>
       </ul>
