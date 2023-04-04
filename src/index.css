@@ -1,22 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
 body{
     background-color: #fdd687;
+    font-family: 'Poppins', sans-serif;
+    color: #497089;
+
+    
 }
 section{
     margin: 50px 0;
     padding: 50px 0;
 }
-.link-web{
+.link-single-project{
     background-color: #497089;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.link-web:hover{
+.link-single-project:hover{
     background-color: #497089be;
+}
+.link-web{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 /* --------------------------- Navbar  */
 .nav-bar{
     padding: 7.5px 15px;
+    box-shadow: rgba(17, 17, 26, 0.1) 10px 5px 10px;
 }
 .nav-bar li{
     align-self: center;
@@ -61,17 +72,32 @@ section{
     height: 60px;
     right: 0px;
     top:-20px ;
+    filter: drop-shadow(5px 5px 2px rgba(27, 27, 27, 0.493));
 }
 /*  ------------------------------- Tools section */
 
 .tools-section{
+    margin-bottom: 0;
+    padding-bottom: 50px;
     background-color: #f8bb42;
 }
 .logo-tech-img{
+    filter: drop-shadow(5px 5px 2px rgba(27, 27, 27, 0.493));
     height: 75px;
 }
-
-
+.social-section{
+padding-top: 50px;
+margin-top: 0;
+margin-bottom: 0;
+    background-color: rgb(82, 82, 82);
+    color: #f1f1f1;
+}
+.logo-link-social{
+    width: 50px;
+}
+.logo-link-social:hover{
+   opacity: 0.6;
+}
 @keyframes phraseAppear{
     0%{
         opacity: 0;
