@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 export default function NavbarMenu({scroll}) {
   return (
     <>
-      <ul className="flex w-full nav-bar">
+    <div className="w-full nav-bar" > 
+      <ul className="flex w-full md:justify-around md:mx-auto">
         <div>
           <li className="mr-12">
             <img
@@ -14,14 +15,9 @@ export default function NavbarMenu({scroll}) {
             />
           </li>
         </div>
-        <div className="flex w-2/4 justify-around mx-auto">
-          {/* <li className="mr-6">
-            <Link className="text-black hover:text-white desktop-link">
-              Home
-            </Link>
-          </li> */}
-          <li className="mr-6">
-            <button onClick={()=> scroll('projects')} className="text-black hover:text-white desktop-link">
+        <div className="flex w-2/4 justify-around mx-auto md:mx-0 md:justify-end">
+          <li className="mr-6 ">
+            <button onClick={()=> scroll('projects')} className="text-black hover:text-white desktop-link md:mr-12">
               Projects
             </button>
           </li>
@@ -32,6 +28,7 @@ export default function NavbarMenu({scroll}) {
           </li>
         </div>
       </ul>
+      </div>
     </>
   );
 }

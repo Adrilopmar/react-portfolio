@@ -5,21 +5,21 @@ export function Projects() {
     <>
       {data.map((el) => (
         <div
+        className="container-card"
           key={el.id}
-          className="max-w-sm rounded  mx-auto project-card relative tools-section"
         >
+          <div className=" rounded w-full project-card relative tools-section lg:hidden">
           {el.technologies[0].logo? <img
             className="absolute project-main-tech "
             src={el.technologies[0].logo}
             alt="main tech"
           /> :<></>}
-
           <img
-            className=" w-full"
+            className="w-full mx-auto"
             src={el.images.cover}
-            alt="Sunset in the mountains"
+            alt={el.name.url_name + 'logo'}
           />
-          <div className="px-6 py-4">
+          <div className="w-full py-4">
             <div className="font-bold text-xl mb-2">{el.name.full_name}</div>
             <div className="text-gray-700 text-base">
               {el.description.short_description.split("//").map((sentence,index) => (
@@ -27,7 +27,7 @@ export function Projects() {
               ))}
             </div>
           </div>
-          <div className="px-6 pt-4 justify-between flex gap-5">
+          <div className="w-full pt-4 justify-between flex gap-5">
             <Link to={el.website} className="link-single-project text-white font-bold py-2 px-4 rounded w-2/4 text-center">
               Read more
             </Link>
@@ -35,6 +35,7 @@ export function Projects() {
               Visit website
             </a >
           </div>
+        </div>
         </div>
       ))}
     </>

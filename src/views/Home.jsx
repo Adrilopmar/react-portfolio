@@ -7,24 +7,41 @@ import { Tools } from "../components/Tools";
 export function Home() {
   return (
     <>
-      <div className="mx-5">
-        <section className="container">
-          <h2 className="text-5xl">G'day, this is Adrià!</h2>
-          <div>
-            <h4 className="text-3xl text-black mt-3">Full stack web developer</h4>
-            <p className=" text-xl text-black">from Barcelona coding complex websites</p>
+      <div className="mx-5 md:w-4/5 md:mx-auto home-bg">
+        <section className="lg:flex lg:flex-wrap lg:mx-auto lg:w-4/5 lg:justify-between xl:w-3/4">
+          <div className=" flex flex-col lg:w-2/4 ">
+            <h2 className="text-5xl"><strong>G'day, this is Adrià!</strong></h2>
+            <h4 className="text-3xl lg:text-3xl text-black mt-3">
+              <strong>Full stack web developer</strong> 
+            </h4>
+            <p className=" text-xl text-black">
+              from Barcelona coding complex websites
+            </p>
+            <div className="w-full hidden lg:block align-bottom mt-auto">
+              <Definition />
+            </div>
           </div>
-          <div className="happy-adri my-20 mx-auto "> </div>
-          <Definition />
-        </section>
-        <section>
+          <div className=" mx-auto lg:w-2/4 ">
+          <div className="happy-adri my-20 mx-auto lg:my-0 lg:mx-0 lg:ml-auto"> </div>
+          </div>
+          <div className="w-full lg:hidden">
+            <Definition />
+          </div>
+        </section >
+        </div>
+        <div className="project-bg px-5 md:w-full md:mx-auto">
+          <div className="md:w-4/5 md:mx-auto">
+        <section className="lg:mx-auto lg:w-4/5 lg:justify-between xl:w-3/4">
           <h2 id="projects" className="text-5xl ">
-            Work
+          <strong>Work</strong>
           </h2>
+          <div className=" ">
           <Projects />
+          </div>
         </section>
-      </div>
-      <section className=" tools-section">
+        </div>
+        </div>
+      <section className="tools-section mx-5 lg:mx-auto md:w-4/5">
         <Tools />
       </section>
       <section className="mx-5">

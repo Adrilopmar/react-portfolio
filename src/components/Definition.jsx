@@ -1,7 +1,7 @@
 export function Definition() {
   return (
     <>
-      <p className="  flex text-3xl text-black">
+      <p className="flex text-3xl text-black">
         Not
         <span className="  w-full relative">
           <span className=" ml-2 phrase-animation absolute text-black">
