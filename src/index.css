@@ -76,6 +76,12 @@ section{
 }
 .container-card{
     height: auto;
+    /* width: 100%; */
+}
+@media (min-width:1024px) {
+    .container-card{
+        width: 48%;
+    }
 }
 .project-card{
     margin: 75px auto;
@@ -87,6 +93,43 @@ section{
     right: 0px;
     top:-20px ;
     filter: drop-shadow(5px 5px 2px rgba(27, 27, 27, 0.493));
+}
+.project-lg-display{
+    width: 100%;
+    height: 450px;
+    position: relative;
+}
+.text-project{
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    transition:all 0.4s;
+    opacity: 0;
+}
+.text-project:hover{
+    opacity: 1;
+    transition: 0.5;
+    backdrop-filter: blur(4px);
+    background-color: rgba(48, 48, 48, 0.6);
+}
+.bg-procrastinant{
+    background: url('https://res.cloudinary.com/djqzi4hgo/image/upload/v1668782486/vue%20portfolio/projects/procrastinant/portrait-procrastinant_hcvj8z.png')
+    center/cover no-repeat;
+}
+.bg-poke_api{
+    background: url('https://res.cloudinary.com/djqzi4hgo/image/upload/v1668700325/vue%20portfolio/projects/poket%20monsters/portrait-pocket-monsters_rfv3cx.png') 
+    center/cover no-repeat
+}
+.bg-spoti_api{
+    background: url('https://res.cloudinary.com/djqzi4hgo/image/upload/v1668700377/vue%20portfolio/projects/spotify%20API/portrait-spotiapp_ylu2r1.png') 
+    center/cover no-repeat
+}
+.bg-new_projects{
+    background: url('https://res.cloudinary.com/djqzi4hgo/image/upload/v1661502717/todoApp/profile/elegaant-duck_ic1lya.jpg') 
+    center/cover no-repeat
 }
 /*  ------------------------------- Tools section */
 

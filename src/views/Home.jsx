@@ -29,13 +29,13 @@ export function Home() {
           </div>
         </section >
         </div>
-        <div className="project-bg px-5 md:w-full md:mx-auto">
+        <div className="project-bg px-5 lg:w-full lg:mx-auto">
           <div className="md:w-4/5 md:mx-auto">
-        <section className="lg:mx-auto lg:w-4/5 lg:justify-between xl:w-3/4">
-          <h2 id="projects" className="text-5xl ">
+        <section className="lg:mx-auto lg:w-4/5 lg:justify-between xl:w-3/4 ">
+          <h2 id="projects" className="text-5xl mb-12">
           <strong>Work</strong>
           </h2>
-          <div className=" ">
+          <div className=" md:flex md:flex-wrap md:justify-between">
           <Projects />
           </div>
         </section>
