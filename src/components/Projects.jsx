@@ -8,13 +8,19 @@ export function Projects() {
         className="container-card mb-9"
           key={el.id}
         >
-          <div className={"hidden lg:block project-lg-display bg-"+el.name.url_name}>
+          <div className={"hidden lg:block project-lg-display relative bg-"+el.name.url_name}>
+          {el.technologies[0].logo? <img
+            className="absolute project-main-tech "
+            src={el.technologies[0].logo}
+            alt="main tech"
+          /> :<></>}
             <div className="text-project p-9">
               <h4 class="text-3xl text-white font-bold">{el.name.full_name}</h4>
               {el.description.short_description.split("//").map((sentence,index) => (
                 <p className="text-white" key={index}>{sentence}</p>
               ))}
-              <div className="w-full pt-4 justify-between flex gap-5">
+             {el.website ? 
+            <div className="w-full pt-4 justify-between flex gap-5">
             <Link to={el.website} className="link-single-project text-white font-bold py-2 px-4 rounded w-2/4 text-center">
               Read more
             </Link>
@@ -22,6 +28,8 @@ export function Projects() {
               Visit website
             </a >
           </div>
+          : <></>
+          }
             </div>
           </div>
           <div className="rounded w-full project-card relative tools-section lg:hidden">
@@ -44,7 +52,8 @@ export function Projects() {
               ))}
             </div>
           </div>
-          <div className="w-full pt-4 justify-between flex gap-5">
+          {el.website ? 
+            <div className="w-full pt-4 justify-between flex gap-5">
             <Link to={el.website} className="link-single-project text-white font-bold py-2 px-4 rounded w-2/4 text-center">
               Read more
             </Link>
@@ -52,6 +61,8 @@ export function Projects() {
               Visit website
             </a >
           </div>
+          : <></>
+          }
           </div>
         </div>
         </div>
