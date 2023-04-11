@@ -1,11 +1,17 @@
+import { useState } from "react";
 import { ContactForm } from "../components/ContactForm";
 import { Definition } from "../components/Definition";
 import { Footer } from "../components/Footer";
 import { Projects } from "../components/Projects";
 import { Social } from "../components/Social";
 import { Tools } from "../components/Tools";
+import { Success } from "../components/Success";
 
 export function Home() {
+  const [mailSent,setMailSent]= useState(false)
+  const handleEmailSent=()=>{
+    setMailSent(!mailSent)
+  }
   return (
     <>
       <div className="mx-5 md:w-4/5 md:mx-auto home-bg">
@@ -53,22 +59,48 @@ export function Home() {
         <div className="md:w-4/5 mx-auto">
           <section className="mx-5 lg:mx-auto lg:w-4/5 lg:justify-between xl:w-3/4">
             <h2 id="about" className="text-5xl ">
-             <strong>About</strong> 
+              <strong>About</strong>
             </h2>
             <div className="mt-9">
-              <img className="hidden md:block" src="https://res.cloudinary.com/djqzi4hgo/image/upload/v1681217778/React-portfolio/personal%20skills/pers-skills_rl3taf.png" alt="" />
-              <img className="md:hidden block" src="https://res.cloudinary.com/djqzi4hgo/image/upload/v1681218317/React-portfolio/personal%20skills/skills-mobile_rc0bet.png" alt="" />
+              <img
+                className="hidden md:block"
+                src="https://res.cloudinary.com/djqzi4hgo/image/upload/v1681217778/React-portfolio/personal%20skills/pers-skills_rl3taf.png"
+                alt=""
+              />
+              <img
+                className="md:hidden block"
+                src="https://res.cloudinary.com/djqzi4hgo/image/upload/v1681218317/React-portfolio/personal%20skills/skills-mobile_rc0bet.png"
+                alt=""
+              />
             </div>
           </section>
         </div>
       </div>
-      <ContactForm/>
-      <div className="px-5 md:w-full md:mx-auto social-section">
-        <div className="md:w-4/5 mx-auto">
-      <section className=" m-0 lg:mx-auto lg:w-4/5 lg:justify-between xl:w-3/4">
-        <Social />
-      </section>
+      <div className="px-5 lg:w-full lg:mx-auto">
+        <div className="md:w-4/5 mx-auto lg:flex justify-between">
+          <section className="mx-5 lg:mx-auto lg:w-4/5 lg:justify-between xl:w-3/4 ">
+          <h2 id="about" className="text-5xl mb-12">
+              <strong>Contact</strong>
+            </h2>
+            {/* <button onClick={handleEmailSent}>conse </button> */}
+            <div className="flex justify-between">
+              {mailSent? 
+                <Success mailSent={mailSent} /> :
+                <ContactForm handleEmailSent={handleEmailSent}/> 
+              }
+              <div className="hidden lg:block my-12">
+                <Social/>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
+      <div className="px-5 md:w-full md:mx-auto social-section lg:hidden">
+        <div className="md:w-4/5 mx-auto">
+          <section className=" m-0 lg:mx-auto lg:w-4/5 lg:justify-between xl:w-3/4">
+            <Social />
+          </section>
+        </div>
       </div>
       <Footer />
     </>
