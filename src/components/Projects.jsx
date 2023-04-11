@@ -15,7 +15,7 @@ export function Projects() {
             alt="main tech"
           /> :<></>}
             <div className="text-project p-9">
-              <h4 class="text-3xl text-white font-bold">{el.name.full_name}</h4>
+              <h4 className="text-3xl text-white font-bold">{el.name.full_name}</h4>
               {el.description.short_description.split("//").map((sentence,index) => (
                 <p className="text-white" key={index}>{sentence}</p>
               ))}
