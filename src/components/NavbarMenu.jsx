@@ -17,13 +17,18 @@ export default function NavbarMenu({scroll}) {
         </div>
         <div className="flex w-2/4 justify-around mx-auto md:mx-0 md:justify-end">
           <li className="mr-6 ">
-            <button onClick={()=> scroll('projects')} className="text-black hover:text-white desktop-link md:mr-12">
+            <button onClick={()=> scroll('projects')} className="text-black hover:text-white desktop-link px-3">
               Projects
             </button>
           </li>
           <li className="mr-6">
-            <button onClick={()=> scroll('about')} className="text-black hover:text-white desktop-link">
+            <button onClick={()=> scroll('about')} className="text-black hover:text-white desktop-link px-3">
               About
+            </button>
+          </li>
+          <li className="mr-6">
+            <button onClick={()=> scroll('contact')} className="text-black hover:text-white desktop-link px-3">
+              Contact
             </button>
           </li>
         </div>
