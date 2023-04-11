@@ -1,3 +1,4 @@
+import { ContactForm } from "../components/ContactForm";
 import { Definition } from "../components/Definition";
 import { Footer } from "../components/Footer";
 import { Projects } from "../components/Projects";
@@ -50,33 +51,21 @@ export function Home() {
       </section>
       <div className="px-5 lg:w-full lg:mx-auto">
         <div className="md:w-4/5 mx-auto">
-          <section className="mx-5">
+          <section className="mx-5 lg:mx-auto lg:w-4/5 lg:justify-between xl:w-3/4">
             <h2 id="about" className="text-5xl ">
              <strong>About</strong> 
             </h2>
-            <p>
-              {`<PersonalSkills>
-  <Adri class="Hard_worker Reliable" id="Critical_thinking" styles="Active_listening: true; Adaptability: flex; Teamwork: 100%;">
-  </Adri>
-  <script>
-    const Adri = ["Patience", "Sincere", "Positive", "Empathy"];
-    Adri.push("Willingness_to_learn");
-    const problem = true;
-    const solution = false;
-    if (problem && !solution) {
-      Adri.find("Problem_solving");
-    } else if (problem > Adri.length) {
-      Adri.concat("Understanding", "Resilience");
-    }
-  </script>
-</PersonalSkills>`}
-            </p>
+            <div className="mt-9">
+              <img className="hidden md:block" src="https://res.cloudinary.com/djqzi4hgo/image/upload/v1681217778/React-portfolio/personal%20skills/pers-skills_rl3taf.png" alt="" />
+              <img className="md:hidden block" src="https://res.cloudinary.com/djqzi4hgo/image/upload/v1681218317/React-portfolio/personal%20skills/skills-mobile_rc0bet.png" alt="" />
+            </div>
           </section>
         </div>
       </div>
+      <ContactForm/>
       <div className="px-5 md:w-full md:mx-auto social-section">
         <div className="md:w-4/5 mx-auto">
-      <section className="m-0">
+      <section className=" m-0 lg:mx-auto lg:w-4/5 lg:justify-between xl:w-3/4">
         <Social />
       </section>
       </div>
