@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import data from "../data/infoProjects.json";
+
 export function Projects() {
   return (
     <>

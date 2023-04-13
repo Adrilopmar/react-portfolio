@@ -1,5 +1,4 @@
-
-export function Success({ mailSent }) {
+export function Success() {
   return (
     <>
     <div className=" w-full lg:w-2/4 my-14">
