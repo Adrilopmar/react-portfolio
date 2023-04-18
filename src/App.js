@@ -4,7 +4,6 @@ import { Home } from "./views/Home";
 
 function App() {
   const scroll =(to)=>{
-    console.log(to);
     document.getElementById(to).scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
   return (

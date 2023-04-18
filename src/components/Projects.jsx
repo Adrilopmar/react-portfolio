@@ -1,23 +1,33 @@
 import { Link } from "react-router-dom";
 import data from "../data/infoProjects.json";
+import { useEffect, useState } from "react";
+import { getProjects } from "../services/config.projects";
 
 export function Projects() {
+  const [projectList, setProjectList] = useState(null)
+  useEffect(()=>{
+    getAllProjects()
+  },[])
+  const getAllProjects =async ()=>{
+    setProjectList(await getProjects())
+  }
   return (
     <>
-      {data.map((el) => (
+    {projectList ? <> 
+      {projectList.map((el) => (
         <div
         className="container-card mb-9"
           key={el.id}
         >
-          <div className={"hidden lg:block project-lg-display relative bg-"+el.name.url_name}>
+          <div className={"hidden lg:block project-lg-display relative bg-"+el.name.shortName}>
           {el.technologies[0].logo? <img
             className="absolute project-main-tech "
             src={el.technologies[0].logo}
             alt="main tech"
           /> :<></>}
             <div className="text-project p-9">
-              <h4 className="text-3xl text-white font-bold">{el.name.full_name}</h4>
-              {el.description.short_description.split("//").map((sentence,index) => (
+              <h4 className="text-3xl text-white font-bold">{el.name.fullName}</h4>
+              {el.description.littleDescription.split("//").map((sentence,index) => (
                 <p className="text-white" key={index}>{sentence}</p>
               ))}
              {el.website ? 
@@ -42,13 +52,13 @@ export function Projects() {
           <img
             className="w-full mx-auto"
             src={el.images.portrait}
-            alt={el.name.url_name + 'logo'}
+            alt={el.name.shortName + 'logo'}
           />
           <div className="">
           <div className="w-full py-4">
-            <div className="font-bold text-xl mb-2">{el.name.full_name}</div>
+            <div className="font-bold text-xl mb-2">{el.name.fullName}</div>
             <div className="text-gray-700 text-base">
-              {el.description.short_description.split("//").map((sentence,index) => (
+              {el.description.littleDescription.split("//").map((sentence,index) => (
                 <p key={index}>{sentence}</p>
               ))}
             </div>
@@ -67,7 +77,8 @@ export function Projects() {
           </div>
         </div>
         </div>
-      ))}
+      ))} </>
+        : <p>Loading...</p>}
     </>
   );
 }
