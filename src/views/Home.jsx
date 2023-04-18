@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ContactForm } from "../components/ContactForm";
 import { Definition } from "../components/Definition";
 import { Footer } from "../components/Footer";
@@ -6,9 +6,19 @@ import { Projects } from "../components/Projects";
 import { Social } from "../components/Social";
 import { Tools } from "../components/Tools";
 import { Success } from "../components/Success";
+import { getProjects } from "../services/config.projects";
 
 export function Home() {
   const [mailSent,setMailSent]= useState(false)
+  const [projectList, setProjectList] = useState(null)
+  useEffect(()=>{
+    getAllProjects()
+  },[])
+
+  const getAllProjects =async ()=>{
+    setProjectList(await getProjects())
+  }
+
   const handleEmailSent=()=>{
     setMailSent(!mailSent)
   }
@@ -47,13 +57,13 @@ export function Home() {
               <strong>Work</strong>
             </h2>
             <div className=" md:flex md:flex-wrap md:justify-between">
-              <Projects />
+              <Projects projectList={projectList} />
             </div>
           </section>
         </div>
       </div>
       <section className="tools-section mx-5 md:mx-auto md:w-4/5">
-        <Tools />
+        <Tools projectList={projectList}/>
       </section>
       <div className="px-5 lg:w-full lg:mx-auto">
         <div className="md:w-4/5 mx-auto">

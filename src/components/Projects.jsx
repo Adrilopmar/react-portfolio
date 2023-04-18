@@ -1,16 +1,6 @@
 import { Link } from "react-router-dom";
-import data from "../data/infoProjects.json";
-import { useEffect, useState } from "react";
-import { getProjects } from "../services/config.projects";
 
-export function Projects() {
-  const [projectList, setProjectList] = useState(null)
-  useEffect(()=>{
-    getAllProjects()
-  },[])
-  const getAllProjects =async ()=>{
-    setProjectList(await getProjects())
-  }
+export function Projects({projectList}) {
   return (
     <>
     {projectList ? <> 
