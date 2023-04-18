@@ -13,11 +13,7 @@ section {
   margin: 50px 0;
   padding: 50px 0;
 }
-.home-bg {
-  padding: 50px 0;
-  /* background-color: #fdd687; */
-  /* box-shadow: 11px 0px 8px -4px rgba(0,0,0,0.3), -11px 0px 8px -4px rgba(0,0,0,0.3); */
-}
+
 .link-single-project {
   background-color: #497089;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
@@ -35,18 +31,37 @@ section {
   background-color: #fdd687;
   /* position: fixed; */
   padding: 7.5px 15px;
-  box-shadow: rgba(17, 17, 26, 0.1) 10px 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 10px 5px 10px;
 }
 .nav-bar li {
   align-self: center;
 }
 .logo-nav {
   height: 50px;
+  min-width: 140px;
   margin-left: 20px;
+}
+.active-menu{
+  background-color:#f3b841 ;
+}
+.menu-dropdown{
+  top:85%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 3px;
 }
 /* ---------------------- Home component */
 .welcome {
   margin: 50px 0 0 25px;
+}
+
+.welcome-section {
+  margin: 25px 0;
+  padding: 25px 0;
+}
+@media (min-width: 1024px) {
+  .welcome-section {
+    margin: 50px 0;
+    padding: 50px 0;
+  }
 }
 .happy-adri {
   border-radius: 50%;
