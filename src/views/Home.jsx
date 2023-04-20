@@ -1,24 +1,15 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { ContactForm } from "../components/ContactForm";
 import { Definition } from "../components/Definition";
-import { Footer } from "../components/Footer";
+
 import { Projects } from "../components/Projects";
 import { Social } from "../components/Social";
 import { Tools } from "../components/Tools";
 import { Success } from "../components/Success";
-import { getProjects } from "../services/config.projects";
 
-export function Home() {
+
+export function Home({projectList}) {
   const [mailSent,setMailSent]= useState(false)
-  const [projectList, setProjectList] = useState(null)
-  useEffect(()=>{
-    getAllProjects()
-  },[])
-
-  const getAllProjects =async ()=>{
-    setProjectList(await getProjects())
-  }
-
   const handleEmailSent=()=>{
     setMailSent(!mailSent)
   }
@@ -36,7 +27,7 @@ export function Home() {
             <p className=" text-xl text-black">
               from Barcelona coding complex websites
             </p>
-            <div className="w-full hidden lg:block align-bottom mt-auto">
+            <div className="w-full hidden lg:block mt-auto">
               <Definition />
             </div>
           </div>
@@ -112,7 +103,7 @@ export function Home() {
           </section>
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }

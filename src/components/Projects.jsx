@@ -22,7 +22,7 @@ export function Projects({projectList}) {
               ))}
              {el.website ? 
             <div className="w-full pt-4 justify-between flex gap-5">
-            <Link to={el.website} className="link-single-project text-white font-bold py-2 px-4 rounded w-2/4 text-center">
+            <Link to={`/${el.name.shortName}`} className="link-single-project text-white font-bold py-2 px-4 rounded w-2/4 text-center">
               Read more
             </Link>
             <a href={el.website} target="_blank" rel="noreferrer" className="link-web bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-2/4 text-center">

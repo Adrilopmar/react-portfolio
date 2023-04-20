@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function NavbarMenu({ scroll,handleActive,isMenuActive }) {
   return (
     <>
@@ -5,11 +7,14 @@ export default function NavbarMenu({ scroll,handleActive,isMenuActive }) {
         <ul className="flex w-full justify-between align-center md:justify-around md:mx-auto">
           <div>
             <li className="mr-12">
+              <Link to='/'>
               <img
                 className="logo-nav min-w-full"
                 src="https://res.cloudinary.com/djqzi4hgo/image/upload/v1668359304/vue%20portfolio/logo/alm-logo_tzv32d.png"
                 alt="logo aloma"
               />
+              </Link>
+              
             </li>
           </div>
           <div className=" hidden md:flex w-2/4 justify-around mx-auto md:mx-0 md:justify-end">
