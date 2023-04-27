@@ -158,6 +158,14 @@ section {
   background: url("https://res.cloudinary.com/djqzi4hgo/image/upload/v1661502717/todoApp/profile/elegaant-duck_ic1lya.jpg")
     center/cover no-repeat;
 }
+
+/*  ------------------------------- Sinlge project details section */
+.logo-tech-details{
+  height: 35px;
+  filter: drop-shadow(5px 5px 2px rgba(27, 27, 27, 0.493));
+}
+
+
 /*  ------------------------------- Tools section */
 
 .tools-section {

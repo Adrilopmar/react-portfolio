@@ -5,8 +5,13 @@ const baseURL = axios.create({
 });
 
 const getProjects = async()=>{
+  try{
     const response = await baseURL.get("/projects")
-    return response.data
+    console.log(response.data);
+    return response.data   
+  }catch(err){
+  console.error(err);
+  }
 }
 
 
