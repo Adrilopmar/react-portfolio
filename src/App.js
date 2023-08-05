@@ -5,19 +5,20 @@ import { Footer } from "./components/Footer";
 import { useEffect, useState } from "react";
 import { SingleProjectDetails } from "./views/SingleProjectDetails";
 import { getProjects } from "./services/config.projects";
+import { infoProject } from './data/infoProjects'
 
 function App() {
 const [isMenuActive, setIsActive] = useState(false);
 const navigate = useNavigate()
-const [projectList, setProjectList] = useState(null)
+const [projectList, setProjectList] = useState(infoProject)
 
 useEffect(()=>{
-  getAllProjects()
+  // getAllProjects()
 },[])
 
-const getAllProjects =async ()=>{
-  setProjectList(await getProjects())
-}
+// const getAllProjects =async ()=>{
+//   setProjectList(await getProjects())
+// }
 
 const handleActive = () => setIsActive(!isMenuActive);
 
